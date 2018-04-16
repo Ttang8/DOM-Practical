@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  height: 400px;
+  width: 399px;
+}
+
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  width: 131px;
+  height: 132px;
+  border: 1px solid black;
+}
+
+.xchar {
+  background-color: blue;
+}
+
+.ochar {
+  background-color: yellow;
+}

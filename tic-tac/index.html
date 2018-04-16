@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="game">
+        <div class="square" data-number="1" data-char=""></div>
+        <div class="square" data-number="2" data-char=""></div>
+        <div class="square" data-number="3" data-char=""></div>
+        <div class="square" data-number="4" data-char=""></div>
+        <div class="square" data-number="5" data-char=""></div>
+        <div class="square" data-number="6" data-char=""></div>
+        <div class="square" data-number="7" data-char=""></div>
+        <div class="square" data-number="8" data-char=""></div>
+        <div class="square" data-number="9" data-char=""></div>
+      </div>
+
+      <button class="button">Reset</button>
+    </div>
+
+    <script>
+      let squares = document.querySelector('.game');
+      let btn = document.querySelector('.button');
+      let squares2 = document.querySelectorAll('.square')
+      let x = true
+
+      btn.addEventListener('click', () => {
+        squares2.forEach(square => {
+          square.classList = "square"
+          square.dataset.char = "";
+          square.innerHTML = "";
+        })
+      })
+
+      function handleCheckWin () {
+        let winning = [
+          [1,2,3],
+          [4,5,6],
+          [7,8,9],
+          [1,4,7],
+          [2,5,8],
+          [3,6,9],
+          [1,5,9],
+          [7,5,3]
+        ]
+
+        winning.forEach(arr => {
+        })
+      }
+
+      function handleClick (e) {
+        console.log(e.target.dataset.number);
+        if (e.target.dataset.char === "x" || e.target.dataset.char === "o") {
+          alert('Taken!');
+          return
+        } else {
+          if (x) {
+            e.target.classList.add('xchar')
+            e.target.dataset.char = "x"
+            e.target.innerHTML = "X"
+            x = false
+          } else {
+            e.target.classList.add('ochar')
+            e.target.dataset.char = "o"
+            e.target.innerHTML = "O"
+            x = true
+          }
+        }
+
+        handleCheckWin();
+      }
+
+      squares.addEventListener('click', handleClick);
+
+
+    </script>
+  </body>
+</html>
